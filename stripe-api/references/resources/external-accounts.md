@@ -4,4 +4,4 @@
 
 | Method | Path | Summary | Details |
 |--------|------|---------|----------|
-| POST | `/v1/external_accounts/{id}` |  | [View](../operations/postexternalaccountsid.md) |
+| POST | `/v1/external_accounts/{id}` |  | [View](../operations/PostExternalAccountsId.md) |

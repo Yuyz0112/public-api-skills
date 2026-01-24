@@ -4,4 +4,4 @@
 
 | Method | Path | Summary | Details |
 |--------|------|---------|----------|
-| GET | `/v1/account` | Retrieve account | [View](../operations/getaccount.md) |
+| GET | `/v1/account` | Retrieve account | [View](../operations/GetAccount.md) |

@@ -6,6 +6,6 @@
 		"generate": "bunx openapi-to-skills ./openapi.json -o . -f"
 	},
 	"devDependencies": {
-		"openapi-to-skills": "^0.1.0"
+		"openapi-to-skills": "^0.2.0"
 	}
 }

@@ -4,7 +4,7 @@
 
 | Method | Path | Summary | Details |
 |--------|------|---------|----------|
-| GET | `/v1/apple_pay/domains` |  | [View](../operations/getapplepaydomains.md) |
-| POST | `/v1/apple_pay/domains` |  | [View](../operations/postapplepaydomains.md) |
-| GET | `/v1/apple_pay/domains/{domain}` |  | [View](../operations/getapplepaydomainsdomain.md) |
-| DELETE | `/v1/apple_pay/domains/{domain}` |  | [View](../operations/deleteapplepaydomainsdomain.md) |
+| GET | `/v1/apple_pay/domains` |  | [View](../operations/GetApplePayDomains.md) |
+| POST | `/v1/apple_pay/domains` |  | [View](../operations/PostApplePayDomains.md) |
+| GET | `/v1/apple_pay/domains/{domain}` |  | [View](../operations/GetApplePayDomainsDomain.md) |
+| DELETE | `/v1/apple_pay/domains/{domain}` |  | [View](../operations/DeleteApplePayDomainsDomain.md) |
