@@ -1,0 +1,12 @@
+{
+	"name": "stripe-api-skills",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Stripe API as Agent Skills format",
+	"scripts": {
+		"generate": "bunx openapi-to-skills ./openapi.json -o . -f"
+	},
+	"devDependencies": {
+		"openapi-to-skills": "^0.1.0"
+	}
+}

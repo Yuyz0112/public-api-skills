@@ -1,0 +1,30 @@
+# GET /v1/charges/{charge}/refunds/{refund}
+
+**Resource:** [charges](../resources/charges.md)
+**Operation ID:** `GetChargesChargeRefundsRefund`
+
+<p>Retrieves the details of an existing refund.</p>
+
+## Parameters
+
+| Name | In | Type | Required | Description |
+|------|------|------|----------|-------------|
+| `charge` | path | string | Yes |  |
+| `expand` | query | string[] | No | Specifies which fields in the response should be expanded. |
+| `refund` | path | string | Yes |  |
+
+## Request Body
+
+**Content Types:** `application/x-www-form-urlencoded`
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 200 | Successful response. |
+| default | Error response. |
+
+**Success Response Schema:**
+
+[refund](../schemas/refund/refund.md)
+
