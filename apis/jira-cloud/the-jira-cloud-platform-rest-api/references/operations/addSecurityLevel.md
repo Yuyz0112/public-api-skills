@@ -1,0 +1,38 @@
+# PUT /rest/api/3/issuesecurityschemes/{schemeId}/level
+
+**Resource:** [Issue security schemes](../resources/Issue-security-schemes.md)
+**Add issue security levels**
+**Operation ID:** `addSecurityLevel`
+
+Adds levels and levels' members to the issue security scheme. You can add up to 100 levels per request.
+
+**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+## Parameters
+
+| Name | In | Type | Required | Description |
+|------|------|------|----------|-------------|
+| `schemeId` | path | string | Yes | The ID of the issue security scheme. |
+
+## Request Body
+
+**Required:** Yes
+
+**Content Types:** `application/json`
+
+**Schema:** [AddSecuritySchemeLevelsRequestBean](../schemas/Add/AddSecuritySchemeLevelsRequestBean.md)
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 204 | Returned if the request is successful. |
+| 400 | Returned if the request is invalid. |
+| 401 | Returned if the authentication credentials are incorrect or missing. |
+| 403 | Returned if the user doesn't have the necessary permission. |
+| 404 | Returned if the security scheme isn't found. |
+
+## Security
+
+- **basicAuth**
+- **OAuth2**: manage:jira-configuration

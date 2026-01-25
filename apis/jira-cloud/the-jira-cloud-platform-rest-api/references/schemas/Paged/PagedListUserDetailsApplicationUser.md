@@ -1,0 +1,16 @@
+# PagedListUserDetailsApplicationUser
+
+A paged list. To access additional details append `[start-index:end-index]` to the expand request. For example, `?expand=sharedUsers[10:40]` returns a list starting at item 10 and finishing at item 40.
+
+**Type:** object
+
+## Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `end-index` | integer (int32) | No | The index of the last item returned on the page. |
+| `items` | UserDetails[] | No | The list of items. |
+| `max-results` | integer (int32) | No | The maximum number of results that could be on the page. |
+| `size` | integer (int32) | No | The number of items on the page. |
+| `start-index` | integer (int32) | No | The index of the first item returned on the page. |
+

@@ -1,0 +1,13 @@
+# AssociationContextObject
+
+Field association for example PROJECT\_ID.
+
+**Type:** object
+
+## Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `identifier` | object | No |  |
+| `type` | string | Yes |  |
+

@@ -1,0 +1,4 @@
+# IssueBulkOperationsFieldOption
+
+**Type:** object
+

@@ -1,0 +1,4 @@
+# StringList
+
+**Type:** object
+

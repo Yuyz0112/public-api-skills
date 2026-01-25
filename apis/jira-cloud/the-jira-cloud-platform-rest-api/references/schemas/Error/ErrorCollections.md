@@ -1,0 +1,4 @@
+# ErrorCollections
+
+**Type:** object
+

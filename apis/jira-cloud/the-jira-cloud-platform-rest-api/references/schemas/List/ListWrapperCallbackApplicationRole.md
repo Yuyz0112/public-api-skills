@@ -1,0 +1,4 @@
+# ListWrapperCallbackApplicationRole
+
+**Type:** object
+
