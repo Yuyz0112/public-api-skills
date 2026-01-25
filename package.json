@@ -3,6 +3,7 @@
 	"private": true,
 	"description": "Public APIs as Agent Skills format",
 	"scripts": {
+		"generate:github": "bunx openapi-to-skills ./apis/github/openapi.json -o ./apis/github -f",
 		"generate:stripe": "bunx openapi-to-skills ./apis/stripe/openapi.json -o ./apis/stripe -f"
 	},
 	"devDependencies": {

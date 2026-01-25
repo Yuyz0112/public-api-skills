@@ -1,0 +1,4 @@
+# public-event
+
+**Type:** object
+

@@ -1,0 +1,32 @@
+# GET /gists/{gist_id}/{sha}
+
+**Resource:** [gists](../resources/gists.md)
+**Get a gist revision**
+**Operation ID:** `gists/get-revision`
+
+Gets a specified gist revision.
+
+This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+
+- **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
+- **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
+
+## Parameters
+
+| Name | In | Type | Required | Description |
+|------|------|------|----------|-------------|
+| `sha` | path | string | Yes |  |
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 200 | Response |
+| 403 | (reference) |
+| 404 | (reference) |
+| 422 | (reference) |
+
+**Success Response Schema:**
+
+[gist-simple](../schemas/gist-simple/gist-simple.md)
+

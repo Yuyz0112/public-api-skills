@@ -1,0 +1,26 @@
+# PUT /orgs/{org}/actions/secrets/{secret_name}/repositories
+
+**Resource:** [actions](../resources/actions.md)
+**Set selected repositories for an organization secret**
+**Operation ID:** `actions/set-selected-repos-for-org-secret`
+
+Replaces all repositories for an organization secret when the `visibility`
+for repository access is set to `selected`. The visibility is set when you [Create
+or update an organization secret](https://docs.github.com/rest/actions/secrets#create-or-update-an-organization-secret).
+
+Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+
+OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+
+## Request Body
+
+**Required:** Yes
+
+**Content Types:** `application/json`
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 204 | Response |
+

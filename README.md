@@ -18,6 +18,7 @@ Agent Skills solves this by splitting documentation into on-demand files. Agents
 
 | API | Operations | Schemas | Directory |
 |-----|------------|---------|-----------|
+| [GitHub](./apis/github/) | 1,078 | 904 | `apis/github/` |
 | [Stripe](./apis/stripe/) | 588 | 1,315 | `apis/stripe/` |
 
 ## Usage
