@@ -1,9 +1,9 @@
 {
-	"name": "stripe-api-skills",
+	"name": "public-api-skills",
 	"private": true,
-	"description": "Stripe API as Agent Skills format",
+	"description": "Public APIs as Agent Skills format",
 	"scripts": {
-		"generate": "bunx openapi-to-skills ./openapi.json -o . -f"
+		"generate:stripe": "bunx openapi-to-skills ./apis/stripe/openapi.json -o ./apis/stripe -f"
 	},
 	"devDependencies": {
 		"openapi-to-skills": "^0.2.0"
