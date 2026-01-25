@@ -1,0 +1,17 @@
+# email-security_MessageDeliveryMode
+
+**Type:** enum
+
+## Values
+
+- `DIRECT`
+- `BCC`
+- `JOURNAL`
+- `REVIEW_SUBMISSION`
+- `DMARC_UNVERIFIED`
+- `DMARC_FAILURE_REPORT`
+- `DMARC_AGGREGATE_REPORT`
+- `THREAT_INTEL_SUBMISSION`
+- `SIMULATION_SUBMISSION`
+- `API`
+- `RETRO_SCAN`

@@ -1,0 +1,6 @@
+# firewall_delete_filter_if_unused
+
+When true, indicates that Cloudflare should also delete the associated filter if there are no other firewall rules referencing the filter.
+
+**Type:** primitive
+

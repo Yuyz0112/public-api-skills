@@ -1,0 +1,167 @@
+---
+name: shopify-admin-api
+description: The REST Admin API lets you build apps and other integrations for the Shopify admin.. Use when working with the Shopify Admin API or when the user needs to interact with this API.
+metadata:
+  api-version: "2020-10"
+  openapi-version: "3.0.0"
+---
+
+# Shopify Admin API
+
+The REST Admin API lets you build apps and other integrations for the Shopify admin.
+
+## How to Use This Skill
+
+This API documentation is split into multiple files for on-demand loading.
+
+**Directory structure:**
+```
+references/
+├── resources/      # 135 resource index files
+├── operations/     # 4567 operation detail files
+└── schemas/        # 0 schema groups, 0 schema files
+```
+
+**Navigation flow:**
+1. Find the resource you need in the list below
+2. Read `references/resources/<resource>.md` to see available operations
+3. Read `references/operations/<operation>.md` for full details
+4. If an operation references a schema, read `references/schemas/<prefix>/<schema>.md`
+
+## Resources
+
+- **shipping-and-fulfillment** → `references/resources/shipping-and-fulfillment.md` (241 ops)
+- **latest_api_version** → `references/resources/latest-api-version.md` (236 ops)
+- **products** → `references/resources/products.md` (192 ops)
+- **online-store** → `references/resources/online-store.md` (184 ops)
+- **customers** → `references/resources/customers.md` (144 ops)
+- **sales-channels** → `references/resources/sales-channels.md` (102 ops)
+- **billing** → `references/resources/billing.md` (92 ops)
+- **store-properties** → `references/resources/store-properties.md` (84 ops)
+- **orders** → `references/resources/orders.md` (79 ops)
+- **inventory** → `references/resources/inventory.md` (72 ops)
+- **fulfillment** → `references/resources/fulfillment.md` (72 ops)
+- **shipping-and-fulfillment/fulfillment** → `references/resources/shipping-and-fulfillment-fulfillment.md` (72 ops)
+- **customer** → `references/resources/customer.md` (60 ops)
+- **customers/customer** → `references/resources/customers-customer.md` (60 ops)
+- **plus** → `references/resources/plus.md` (60 ops)
+- **discounts** → `references/resources/discounts.md` (54 ops)
+- **discountcode** → `references/resources/discountcode.md` (54 ops)
+- **discounts/discountcode** → `references/resources/discounts-discountcode.md` (54 ops)
+- **events** → `references/resources/events.md` (54 ops)
+- **article** → `references/resources/article.md` (48 ops)
+- **online-store/article** → `references/resources/online-store-article.md` (48 ops)
+- **customer-address** → `references/resources/customer-address.md` (42 ops)
+- **customers/customer-address** → `references/resources/customers-customer-address.md` (42 ops)
+- **customersavedsearch** → `references/resources/customersavedsearch.md` (42 ops)
+- **customers/customersavedsearch** → `references/resources/customers-customersavedsearch.md` (42 ops)
+- **giftcard** → `references/resources/giftcard.md` (42 ops)
+- **plus/giftcard** → `references/resources/plus-giftcard.md` (42 ops)
+- **smartcollection** → `references/resources/smartcollection.md` (42 ops)
+- **products/smartcollection** → `references/resources/products-smartcollection.md` (42 ops)
+- **webhook** → `references/resources/webhook.md` (36 ops)
+- **events/webhook** → `references/resources/events-webhook.md` (36 ops)
+- **metafield** → `references/resources/metafield.md` (36 ops)
+- **redirect** → `references/resources/redirect.md` (36 ops)
+- **online-store/redirect** → `references/resources/online-store-redirect.md` (36 ops)
+- **scripttag** → `references/resources/scripttag.md` (36 ops)
+- **online-store/scripttag** → `references/resources/online-store-scripttag.md` (36 ops)
+- **customcollection** → `references/resources/customcollection.md` (36 ops)
+- **products/customcollection** → `references/resources/products-customcollection.md` (36 ops)
+- **product** → `references/resources/product.md` (36 ops)
+- **products/product** → `references/resources/products-product.md` (36 ops)
+- **product-image** → `references/resources/product-image.md` (36 ops)
+- **products/product-image** → `references/resources/products-product-image.md` (36 ops)
+- **country** → `references/resources/country.md` (36 ops)
+- **store-properties/country** → `references/resources/store-properties-country.md` (36 ops)
+- **fulfillmentorder** → `references/resources/fulfillmentorder.md` (35 ops)
+- **shipping-and-fulfillment/fulfillmentorder** → `references/resources/shipping-and-fulfillment-fulfillmentorder.md` (35 ops)
+- **recurringapplicationcharge** → `references/resources/recurringapplicationcharge.md` (34 ops)
+- **billing/recurringapplicationcharge** → `references/resources/billing-recurringapplicationcharge.md` (34 ops)
+- **fulfillmentservice** → `references/resources/fulfillmentservice.md` (32 ops)
+- **shipping-and-fulfillment/fulfillmentservice** → `references/resources/shipping-and-fulfillment-fulfillmentservice.md` (32 ops)
+- **analytics** → `references/resources/analytics.md` (30 ops)
+- **report** → `references/resources/report.md` (30 ops)
+- **analytics/report** → `references/resources/analytics-report.md` (30 ops)
+- **inventorylevel** → `references/resources/inventorylevel.md` (30 ops)
+- **inventory/inventorylevel** → `references/resources/inventory-inventorylevel.md` (30 ops)
+- **theme** → `references/resources/theme.md` (30 ops)
+- **online-store/theme** → `references/resources/online-store-theme.md` (30 ops)
+- **checkout** → `references/resources/checkout.md` (30 ops)
+- **sales-channels/checkout** → `references/resources/sales-channels-checkout.md` (30 ops)
+- **order-risk** → `references/resources/order-risk.md` (30 ops)
+- **orders/order-risk** → `references/resources/orders-order-risk.md` (30 ops)
+- **collect** → `references/resources/collect.md` (30 ops)
+- **products/collect** → `references/resources/products-collect.md` (30 ops)
+- **collectionlisting** → `references/resources/collectionlisting.md` (30 ops)
+- **sales-channels/collectionlisting** → `references/resources/sales-channels-collectionlisting.md` (30 ops)
+- **carrierservice** → `references/resources/carrierservice.md` (30 ops)
+- **shipping-and-fulfillment/carrierservice** → `references/resources/shipping-and-fulfillment-carrierservice.md` (30 ops)
+- **location** → `references/resources/location.md` (24 ops)
+- **inventory/location** → `references/resources/inventory-location.md` (24 ops)
+- **refund** → `references/resources/refund.md` (24 ops)
+- **orders/refund** → `references/resources/orders-refund.md` (24 ops)
+- **payment** → `references/resources/payment.md` (24 ops)
+- **sales-channels/payment** → `references/resources/sales-channels-payment.md` (24 ops)
+- **fulfillmentevent** → `references/resources/fulfillmentevent.md` (24 ops)
+- **shipping-and-fulfillment/fulfillmentevent** → `references/resources/shipping-and-fulfillment-fulfillmentevent.md` (24 ops)
+- **province** → `references/resources/province.md` (24 ops)
+- **store-properties/province** → `references/resources/store-properties-province.md` (24 ops)
+- **applicationcharge** → `references/resources/applicationcharge.md` (22 ops)
+- **billing/applicationcharge** → `references/resources/billing-applicationcharge.md` (22 ops)
+- **shopify_payments** → `references/resources/shopify-payments.md` (22 ops)
+- **access** → `references/resources/access.md` (19 ops)
+- **order** → `references/resources/order.md` (19 ops)
+- **orders/order** → `references/resources/orders-order.md` (19 ops)
+- **storefrontaccesstoken** → `references/resources/storefrontaccesstoken.md` (18 ops)
+- **access/storefrontaccesstoken** → `references/resources/access-storefrontaccesstoken.md` (18 ops)
+- **applicationcredit** → `references/resources/applicationcredit.md` (18 ops)
+- **billing/applicationcredit** → `references/resources/billing-applicationcredit.md` (18 ops)
+- **usagecharge** → `references/resources/usagecharge.md` (18 ops)
+- **billing/usagecharge** → `references/resources/billing-usagecharge.md` (18 ops)
+- **event** → `references/resources/event.md` (18 ops)
+- **events/event** → `references/resources/events-event.md` (18 ops)
+- **inventoryitem** → `references/resources/inventoryitem.md` (18 ops)
+- **inventory/inventoryitem** → `references/resources/inventory-inventoryitem.md` (18 ops)
+- **asset** → `references/resources/asset.md` (18 ops)
+- **online-store/asset** → `references/resources/online-store-asset.md` (18 ops)
+- **user** → `references/resources/user.md` (18 ops)
+- **plus/user** → `references/resources/plus-user.md` (18 ops)
+- **productlisting** → `references/resources/productlisting.md` (18 ops)
+- **sales-channels/productlisting** → `references/resources/sales-channels-productlisting.md` (18 ops)
+- **cancellationrequest** → `references/resources/cancellationrequest.md` (18 ops)
+- **shipping-and-fulfillment/cancellationrequest** → `references/resources/shipping-and-fulfillment-cancellationrequest.md` (18 ops)
+- **fulfillmentrequest** → `references/resources/fulfillmentrequest.md` (18 ops)
+- **shipping-and-fulfillment/fulfillmentrequest** → `references/resources/shipping-and-fulfillment-fulfillmentrequest.md` (18 ops)
+- **collection** → `references/resources/collection.md` (12 ops)
+- **products/collection** → `references/resources/products-collection.md` (12 ops)
+- **payout** → `references/resources/payout.md` (12 ops)
+- **shopify_payments/payout** → `references/resources/shopify-payments-payout.md` (12 ops)
+- **comment** → `references/resources/comment.md` (10 ops)
+- **online-store/comment** → `references/resources/online-store-comment.md` (10 ops)
+- **blog** → `references/resources/blog.md` (6 ops)
+- **online-store/blog** → `references/resources/online-store-blog.md` (6 ops)
+- **abandoned-checkouts** → `references/resources/abandoned-checkouts.md` (6 ops)
+- **orders/abandoned-checkouts** → `references/resources/orders-abandoned-checkouts.md` (6 ops)
+- **assignedfulfillmentorder** → `references/resources/assignedfulfillmentorder.md` (6 ops)
+- **shipping-and-fulfillment/assignedfulfillmentorder** → `references/resources/shipping-and-fulfillment-assignedfulfillmentorder.md` (6 ops)
+- **locationsformove** → `references/resources/locationsformove.md` (6 ops)
+- **shipping-and-fulfillment/locationsformove** → `references/resources/shipping-and-fulfillment-locationsformove.md` (6 ops)
+- **balance** → `references/resources/balance.md` (6 ops)
+- **shopify_payments/balance** → `references/resources/shopify-payments-balance.md` (6 ops)
+- **currency** → `references/resources/currency.md` (6 ops)
+- **store-properties/currency** → `references/resources/store-properties-currency.md` (6 ops)
+- **policy** → `references/resources/policy.md` (6 ops)
+- **store-properties/policy** → `references/resources/store-properties-policy.md` (6 ops)
+- **shippingzone** → `references/resources/shippingzone.md` (6 ops)
+- **store-properties/shippingzone** → `references/resources/store-properties-shippingzone.md` (6 ops)
+- **shop** → `references/resources/shop.md` (6 ops)
+- **store-properties/shop** → `references/resources/store-properties-shop.md` (6 ops)
+- **tendertransaction** → `references/resources/tendertransaction.md` (6 ops)
+- **dispute** → `references/resources/dispute.md` (3 ops)
+- **shopify_payments/dispute** → `references/resources/shopify-payments-dispute.md` (3 ops)
+- **deprecated_api_calls** → `references/resources/deprecated-api-calls.md` (2 ops)
+- **accessscope** → `references/resources/accessscope.md` (1 ops)
+- **access/accessscope** → `references/resources/access-accessscope.md` (1 ops)
+- **transaction** → `references/resources/transaction.md` (1 ops)
+- **shopify_payments/transaction** → `references/resources/shopify-payments-transaction.md` (1 ops)

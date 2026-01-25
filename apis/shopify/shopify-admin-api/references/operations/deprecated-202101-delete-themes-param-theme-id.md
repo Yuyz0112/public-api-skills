@@ -1,0 +1,20 @@
+# DELETE /admin/api/2021-01/themes/{theme_id}.json
+
+**Resource:** [online-store/theme](../resources/online-store-theme.md)
+**Deletes a theme.**
+**Operation ID:** `deprecated_202101_delete_themes_param_theme_id`
+
+https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-2021-01
+
+## Parameters
+
+| Name | In | Type | Required | Description |
+|------|------|------|----------|-------------|
+| `theme_id` | path | string | Yes | theme_id |
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 200 |  |
+

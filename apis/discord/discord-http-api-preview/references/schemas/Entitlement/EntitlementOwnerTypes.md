@@ -1,0 +1,6 @@
+# EntitlementOwnerTypes
+
+**Type:** oneOf
+
+## Composition
+

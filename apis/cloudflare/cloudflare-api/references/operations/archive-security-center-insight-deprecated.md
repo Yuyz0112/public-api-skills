@@ -1,0 +1,32 @@
+# PUT /accounts/{account_id}/intel/attack-surface-report/{issue_id}/dismiss
+
+**Resource:** [Security Center Insights](../resources/Security-Center-Insights.md)
+**Archive Security Center Insight**
+**Operation ID:** `archive-security-center-insight-deprecated`
+⚠️ **Deprecated**
+
+## Parameters
+
+| Name | In | Type | Required | Description |
+|------|------|------|----------|-------------|
+| `account_id` | path | security-center_identifier | Yes |  |
+| `issue_id` | path | string | Yes |  |
+
+## Request Body
+
+**Required:** Yes
+
+**Content Types:** `application/json`
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 200 | OK |
+| 4XX | Client Error |
+
+## Security
+
+- **api_email**
+- **api_key**
+- **api_token**

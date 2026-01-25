@@ -1,0 +1,35 @@
+# abuse-reports_ErrorCode
+
+**Type:** oneOf
+
+## Composition
+
+- [abuse-reports_BadActError](abuse-reports-BadActError.md)
+- [abuse-reports_BadAddressError](abuse-reports-BadAddressError.md)
+- [abuse-reports_BadAgentNameError](abuse-reports-BadAgentNameError.md)
+- [abuse-reports_BadCityError](abuse-reports-BadCityError.md)
+- [abuse-reports_BadCountryError](abuse-reports-BadCountryError.md)
+- [abuse-reports_BadPortsProtocolError](abuse-reports-BadPortsProtocolError.md)
+- [abuse-reports_BadStateError](abuse-reports-BadStateError.md)
+- [abuse-reports_MaxIPsError](abuse-reports-MaxIPsError.md)
+- [abuse-reports_PortsProtocolError](abuse-reports-PortsProtocolError.md)
+- [abuse-reports_BadCommentsError](abuse-reports-BadCommentsError.md)
+- [abuse-reports_BadEmailError](abuse-reports-BadEmailError.md)
+- [abuse-reports_BadIPError](abuse-reports-BadIPError.md)
+- [abuse-reports_BadJustError](abuse-reports-BadJustError.md)
+- [abuse-reports_BadNameError](abuse-reports-BadNameError.md)
+- [abuse-reports_BadUrlsError](abuse-reports-BadUrlsError.md)
+- [abuse-reports_DBError](abuse-reports-DBError.md)
+- [abuse-reports_DedupeError](abuse-reports-DedupeError.md)
+- [abuse-reports_DiffEmailError](abuse-reports-DiffEmailError.md)
+- [abuse-reports_EmailError](abuse-reports-EmailError.md)
+- [abuse-reports_InternalError](abuse-reports-InternalError.md)
+- [abuse-reports_InvalidNotifyError](abuse-reports-InvalidNotifyError.md)
+- [abuse-reports_MustNotifyError](abuse-reports-MustNotifyError.md)
+- [abuse-reports_NoAgreeError](abuse-reports-NoAgreeError.md)
+- [abuse-reports_NoOriginalWorkError](abuse-reports-NoOriginalWorkError.md)
+- [abuse-reports_NoSigError](abuse-reports-NoSigError.md)
+- [abuse-reports_UnexpectedActError](abuse-reports-UnexpectedActError.md)
+- [abuse-reports_UnknownError](abuse-reports-UnknownError.md)
+- [abuse-reports_UrlNotOrangeError](abuse-reports-UrlNotOrangeError.md)
+- [abuse-reports_UrlNotvalidError](abuse-reports-UrlNotvalidError.md)

@@ -3,10 +3,18 @@
 	"private": true,
 	"description": "Public APIs as Agent Skills format",
 	"scripts": {
+		"generate:asana": "bunx openapi-to-skills ./apis/asana/openapi.yaml -o ./apis/asana -f",
+		"generate:cloudflare": "bunx openapi-to-skills ./apis/cloudflare/openapi.json -o ./apis/cloudflare -f",
+		"generate:discord": "bunx openapi-to-skills ./apis/discord/openapi.json -o ./apis/discord -f",
+		"generate:figma": "bunx openapi-to-skills ./apis/figma/openapi.yaml -o ./apis/figma -f",
 		"generate:github": "bunx openapi-to-skills ./apis/github/openapi.json -o ./apis/github -f",
 		"generate:jira-cloud": "bunx openapi-to-skills ./apis/jira-cloud/openapi.json -o ./apis/jira-cloud -f",
+		"generate:pagerduty": "bunx openapi-to-skills ./apis/pagerduty/openapi.json -o ./apis/pagerduty -f",
+		"generate:shopify": "bunx openapi-to-skills ./apis/shopify/openapi.json -o ./apis/shopify -f",
 		"generate:slack": "bunx openapi-to-skills ./apis/slack/openapi.json -o ./apis/slack -f",
-		"generate:stripe": "bunx openapi-to-skills ./apis/stripe/openapi.json -o ./apis/stripe -f"
+		"generate:stripe": "bunx openapi-to-skills ./apis/stripe/openapi.json -o ./apis/stripe -f",
+		"generate:twilio": "bunx openapi-to-skills ./apis/twilio/openapi.json -o ./apis/twilio -f",
+		"generate:twitter": "bunx openapi-to-skills ./apis/twitter/openapi.json -o ./apis/twitter -f"
 	},
 	"devDependencies": {
 		"openapi-to-skills": "^0.2.0"

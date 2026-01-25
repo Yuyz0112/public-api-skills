@@ -1,0 +1,6 @@
+# NameplatePalette
+
+**Type:** oneOf
+
+## Composition
+

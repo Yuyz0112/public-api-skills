@@ -1,0 +1,6 @@
+# ApplicationCommandHandler
+
+**Type:** oneOf
+
+## Composition
+

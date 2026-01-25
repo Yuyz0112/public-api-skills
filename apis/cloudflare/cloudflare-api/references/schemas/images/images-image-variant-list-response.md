@@ -1,0 +1,8 @@
+# images_image_variant_list_response
+
+**Type:** allOf
+
+## Composition
+
+- [images_api-response-common](images-api-response-common.md)
+- (inline schema)

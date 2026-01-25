@@ -1,0 +1,24 @@
+# api.v2010.account.conference.participant
+
+**Type:** object
+
+## Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `account_sid` | string | No | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Participant resource. |
+| `call_sid` | string | No | The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the Participant resource is associated with. |
+| `label` | string | No | The user-specified label of this participant, if one was given when the participant was created. This may be used to fetch, update or delete the participant. |
+| `call_sid_to_coach` | string | No | The SID of the participant who is being `coached`. The participant being coached is the only participant who can hear the participant who is `coaching`. |
+| `coaching` | boolean | No | Whether the participant is coaching another call. Can be: `true` or `false`. If not present, defaults to `false` unless `call_sid_to_coach` is defined. If `true`, `call_sid_to_coach` must be defined. |
+| `conference_sid` | string | No | The SID of the conference the participant is in. |
+| `date_created` | string (date-time-rfc-2822) | No | The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format. |
+| `date_updated` | string (date-time-rfc-2822) | No | The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format. |
+| `end_conference_on_exit` | boolean | No | Whether the conference ends when the participant leaves. Can be: `true` or `false` and the default is `false`. If `true`, the conference ends and all other participants drop out when the participant leaves. |
+| `muted` | boolean | No | Whether the participant is muted. Can be `true` or `false`. |
+| `hold` | boolean | No | Whether the participant is on hold. Can be `true` or `false`. |
+| `start_conference_on_enter` | boolean | No | Whether the conference starts when the participant joins the conference, if it has not already started. Can be: `true` or `false` and the default is `true`. If `false` and the conference has not started, the participant is muted and hears background music until another participant starts the conference. |
+| `status` | [participant_enum_status](participant-enum-status.md) | No |  |
+| `queue_time` | string | No | The wait time in milliseconds before participant's call is placed. Only available in the response to a create participant request. |
+| `uri` | string | No | The URI of the resource, relative to `https://api.twilio.com`. |
+

@@ -1,0 +1,6 @@
+# waitingroom_host
+
+The host name to which the waiting room will be applied (no wildcards). Please do not include the scheme (http:// or https://). The host and path combination must be unique.
+
+**Type:** primitive
+

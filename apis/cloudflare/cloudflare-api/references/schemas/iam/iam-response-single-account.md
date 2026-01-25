@@ -1,0 +1,8 @@
+# iam_response_single_account
+
+**Type:** allOf
+
+## Composition
+
+- [iam_api-response-single](iam-api-response-single.md)
+- (inline schema)

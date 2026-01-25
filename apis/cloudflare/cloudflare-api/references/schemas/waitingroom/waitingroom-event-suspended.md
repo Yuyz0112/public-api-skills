@@ -1,0 +1,6 @@
+# waitingroom_event_suspended
+
+Suspends or allows an event. If set to `true`, the event is ignored and traffic will be handled based on the waiting room configuration.
+
+**Type:** primitive
+

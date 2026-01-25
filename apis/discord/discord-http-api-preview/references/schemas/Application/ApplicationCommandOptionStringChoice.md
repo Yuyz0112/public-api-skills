@@ -1,0 +1,12 @@
+# ApplicationCommandOptionStringChoice
+
+**Type:** object
+
+## Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `name` | string | Yes |  |
+| `name_localizations` | object,null | No |  |
+| `value` | string | Yes |  |
+

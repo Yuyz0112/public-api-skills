@@ -1,0 +1,8 @@
+# PortfolioResponse
+
+**Type:** allOf
+
+## Composition
+
+- [PortfolioBase](PortfolioBase.md)
+- (inline schema)

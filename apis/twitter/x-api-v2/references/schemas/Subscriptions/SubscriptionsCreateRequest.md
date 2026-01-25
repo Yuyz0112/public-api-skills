@@ -1,0 +1,4 @@
+# SubscriptionsCreateRequest
+
+**Type:** object
+

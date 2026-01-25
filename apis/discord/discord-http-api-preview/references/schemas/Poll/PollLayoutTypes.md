@@ -1,0 +1,6 @@
+# PollLayoutTypes
+
+**Type:** oneOf
+
+## Composition
+

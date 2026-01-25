@@ -1,0 +1,6 @@
+# tunnel_remote_config
+
+If `true`, the tunnel can be configured remotely from the Zero Trust dashboard. If `false`, the tunnel must be configured locally on the origin machine.
+
+**Type:** primitive
+

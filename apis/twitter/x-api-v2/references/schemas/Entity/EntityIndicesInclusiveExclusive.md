@@ -1,0 +1,13 @@
+# EntityIndicesInclusiveExclusive
+
+Represent a boundary range (start and end index) for a recognized entity (for example a hashtag or a mention). `start` must be smaller than `end`.  The start index is inclusive, the end index is exclusive.
+
+**Type:** object
+
+## Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `end` | integer | Yes | Index (zero-based) at which position this entity ends.  The index is exclusive. |
+| `start` | integer | Yes | Index (zero-based) at which position this entity starts.  The index is inclusive. |
+

@@ -18,10 +18,18 @@ Agent Skills solves this by splitting documentation into on-demand files. Agents
 
 | API | Operations | Schemas | Directory |
 |-----|------------|---------|-----------|
+| [Asana](./apis/asana/) | 217 | 244 | `apis/asana/` |
+| [Cloudflare](./apis/cloudflare/) | 2,531 | 5,231 | `apis/cloudflare/` |
+| [Discord](./apis/discord/) | 227 | 490 | `apis/discord/` |
+| [Figma](./apis/figma/) | 46 | 223 | `apis/figma/` |
 | [GitHub](./apis/github/) | 1,078 | 904 | `apis/github/` |
 | [Jira Cloud](./apis/jira-cloud/) | 616 | 967 | `apis/jira-cloud/` |
+| [PagerDuty](./apis/pagerduty/) | 390 | 244 | `apis/pagerduty/` |
+| [Shopify](./apis/shopify/) | 4,567 | - | `apis/shopify/` |
 | [Slack](./apis/slack/) | 253 | 48 | `apis/slack/` |
 | [Stripe](./apis/stripe/) | 588 | 1,315 | `apis/stripe/` |
+| [Twilio](./apis/twilio/) | 197 | 148 | `apis/twilio/` |
+| [Twitter/X](./apis/twitter/) | 192 | 393 | `apis/twitter/` |
 
 ## Usage
 

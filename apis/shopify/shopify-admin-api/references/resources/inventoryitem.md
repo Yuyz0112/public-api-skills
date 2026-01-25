@@ -1,0 +1,24 @@
+# inventoryitem
+
+## Operations
+
+| Method | Path | Summary | Details |
+|--------|------|---------|----------|
+| GET | `/admin/api/2020-01/inventory_items.json` | Retrieves a list of inventory items. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints. | [View](../operations/deprecated-202001-get-inventory-items.md) |
+| GET | `/admin/api/2020-01/inventory_items/{inventory_item_id}.json` | Retrieves a single inventory item by ID | [View](../operations/deprecated-202001-get-inventory-items-param-inventory-item-id.md) |
+| PUT | `/admin/api/2020-01/inventory_items/{inventory_item_id}.json` | Updates an existing inventory item | [View](../operations/deprecated-202001-update-inventory-items-param-inventory-item-id.md) |
+| GET | `/admin/api/2020-04/inventory_items.json` | Retrieves a list of inventory items. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints. | [View](../operations/deprecated-202004-get-inventory-items.md) |
+| GET | `/admin/api/2020-04/inventory_items/{inventory_item_id}.json` | Retrieves a single inventory item by ID | [View](../operations/deprecated-202004-get-inventory-items-param-inventory-item-id.md) |
+| PUT | `/admin/api/2020-04/inventory_items/{inventory_item_id}.json` | Updates an existing inventory item | [View](../operations/deprecated-202004-update-inventory-items-param-inventory-item-id.md) |
+| GET | `/admin/api/2020-07/inventory_items.json` | Retrieves a list of inventory items. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints. | [View](../operations/deprecated-202007-get-inventory-items.md) |
+| GET | `/admin/api/2020-07/inventory_items/{inventory_item_id}.json` | Retrieves a single inventory item by ID | [View](../operations/deprecated-202007-get-inventory-items-param-inventory-item-id.md) |
+| PUT | `/admin/api/2020-07/inventory_items/{inventory_item_id}.json` | Updates an existing inventory item | [View](../operations/deprecated-202007-update-inventory-items-param-inventory-item-id.md) |
+| GET | `/admin/api/2020-10/inventory_items.json` | Retrieves a list of inventory items. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints. | [View](../operations/get-inventory-items.md) |
+| GET | `/admin/api/2020-10/inventory_items/{inventory_item_id}.json` | Retrieves a single inventory item by ID | [View](../operations/get-inventory-items-param-inventory-item-id.md) |
+| PUT | `/admin/api/2020-10/inventory_items/{inventory_item_id}.json` | Updates an existing inventory item | [View](../operations/update-inventory-items-param-inventory-item-id.md) |
+| GET | `/admin/api/2021-01/inventory_items.json` | Retrieves a list of inventory items. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints. | [View](../operations/deprecated-202101-get-inventory-items.md) |
+| GET | `/admin/api/2021-01/inventory_items/{inventory_item_id}.json` | Retrieves a single inventory item by ID | [View](../operations/deprecated-202101-get-inventory-items-param-inventory-item-id.md) |
+| PUT | `/admin/api/2021-01/inventory_items/{inventory_item_id}.json` | Updates an existing inventory item | [View](../operations/deprecated-202101-update-inventory-items-param-inventory-item-id.md) |
+| GET | `/admin/api/unstable/inventory_items.json` | Retrieves a list of inventory items. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints. | [View](../operations/deprecated-unstable-get-inventory-items.md) |
+| GET | `/admin/api/unstable/inventory_items/{inventory_item_id}.json` | Retrieves a single inventory item by ID | [View](../operations/deprecated-unstable-get-inventory-items-param-inventory-item-id.md) |
+| PUT | `/admin/api/unstable/inventory_items/{inventory_item_id}.json` | Updates an existing inventory item | [View](../operations/deprecated-unstable-update-inventory-items-param-inventory-item-id.md) |

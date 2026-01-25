@@ -1,0 +1,8 @@
+# PortfolioUpdateRequest
+
+**Type:** allOf
+
+## Composition
+
+- [PortfolioBase](PortfolioBase.md)
+- (inline schema)

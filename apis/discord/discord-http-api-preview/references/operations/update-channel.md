@@ -1,0 +1,22 @@
+# PATCH /channels/{channel_id}
+
+**Resource:** [channels](../resources/channels.md)
+**Operation ID:** `update_channel`
+
+## Request Body
+
+**Required:** Yes
+
+**Content Types:** `application/json`
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 200 | 200 response for update_channel |
+| 429 | (reference) |
+| 4XX | (reference) |
+
+## Security
+
+- **BotToken**

@@ -1,0 +1,8 @@
+# zero-trust-gateway_audit_ssh_settings_components-schemas-single_response
+
+**Type:** allOf
+
+## Composition
+
+- [zero-trust-gateway_api-response-single](zero-trust-gateway-api-response-single.md)
+- (inline schema)

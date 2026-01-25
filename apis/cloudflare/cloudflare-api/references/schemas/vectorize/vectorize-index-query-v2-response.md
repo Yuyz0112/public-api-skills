@@ -1,0 +1,23 @@
+# vectorize_index-query-v2-response
+
+**Type:** object
+
+## Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `count` | integer | No | Specifies the count of vectors returned by the search |
+| `matches` | object[] | No | Array of vectors matched by the search |
+
+## Nested Fields
+
+### `matches`
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `id` | [vectorize_vector-identifier](vectorize-vector-identifier.md) | No |  |
+| `metadata` | object | No |  |
+| `namespace` | string | No |  |
+| `score` | number | No | The score of the vector according to the index's distance metric |
+| `values` | number[] | No |  |
+

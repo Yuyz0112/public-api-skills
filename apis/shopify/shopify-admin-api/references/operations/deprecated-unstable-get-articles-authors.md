@@ -1,0 +1,14 @@
+# GET /admin/api/unstable/articles/authors.json
+
+**Resource:** [online-store/article](../resources/online-store-article.md)
+**Retrieves a list all of article authors**
+**Operation ID:** `deprecated_unstable_get_articles_authors`
+
+https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-unstable
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 200 |  |
+

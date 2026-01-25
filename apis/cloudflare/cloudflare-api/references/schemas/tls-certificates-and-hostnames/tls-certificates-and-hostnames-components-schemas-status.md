@@ -1,0 +1,24 @@
+# tls-certificates-and-hostnames_components-schemas-status
+
+Status of the hostname's activation.
+
+**Type:** enum
+
+## Values
+
+- `active`
+- `pending`
+- `active_redeploying`
+- `moved`
+- `pending_deletion`
+- `deleted`
+- `pending_blocked`
+- `pending_migration`
+- `pending_provisioned`
+- `test_pending`
+- `test_active`
+- `test_active_apex`
+- `test_blocked`
+- `test_failed`
+- `provisioned`
+- `blocked`

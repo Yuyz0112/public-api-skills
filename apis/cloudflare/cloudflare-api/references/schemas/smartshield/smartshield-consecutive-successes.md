@@ -1,0 +1,6 @@
+# smartshield_consecutive_successes
+
+The number of consecutive successes required from a health check before changing the health to healthy.
+
+**Type:** primitive
+
