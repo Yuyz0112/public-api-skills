@@ -9,6 +9,7 @@
 		"generate:figma": "bunx openapi-to-skills ./apis/figma/openapi.yaml -o ./apis/figma -f",
 		"generate:github": "bunx openapi-to-skills ./apis/github/openapi.json -o ./apis/github -f",
 		"generate:jira-cloud": "bunx openapi-to-skills ./apis/jira-cloud/openapi.json -o ./apis/jira-cloud -f",
+		"generate:jira-server": "bunx openapi-to-skills ./apis/jira-server/openapi.json -o ./apis/jira-server -f",
 		"generate:pagerduty": "bunx openapi-to-skills ./apis/pagerduty/openapi.json -o ./apis/pagerduty -f",
 		"generate:shopify": "bunx openapi-to-skills ./apis/shopify/openapi.json -o ./apis/shopify -f",
 		"generate:slack": "bunx openapi-to-skills ./apis/slack/openapi.json -o ./apis/slack -f",
