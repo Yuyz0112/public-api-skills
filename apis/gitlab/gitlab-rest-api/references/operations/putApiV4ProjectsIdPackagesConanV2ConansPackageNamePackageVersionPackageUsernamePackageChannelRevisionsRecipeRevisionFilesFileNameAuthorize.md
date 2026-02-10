@@ -1,0 +1,29 @@
+# PUT /api/v4/projects/{id}/packages/conan/v2/conans/{package_name}/{package_version}/{package_username}/{package_channel}/revisions/{recipe_revision}/files/{file_name}/authorize
+
+**Resource:** [Packages](../resources/Packages.md)
+**Workhorse authorize the conan recipe file**
+**Operation ID:** `putApiV4ProjectsIdPackagesConanV2ConansPackageNamePackageVersionPackageUsernamePackageChannelRevisionsRecipeRevisionFilesFileNameAuthorize`
+
+This feature was introduced in GitLab 17.10
+
+## Parameters
+
+| Name | In | Type | Required | Description |
+|------|------|------|----------|-------------|
+| `id` | path | any | Yes | The ID or URL-encoded path of the project |
+| `package_name` | path | string | Yes | Package name |
+| `package_username` | path | string | Yes | Package username |
+| `package_channel` | path | string | Yes | Package channel |
+| `recipe_revision` | path | string | Yes | Recipe revision |
+| `file_name` | path | enum: conanfile.py, conanmanifest.txt, conan_sources.tgz... | Yes | Package file name |
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 200 | OK |
+| 400 | Bad Request |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+| 404 | Not Found |
+

@@ -1,0 +1,7 @@
+# APIEntitiesNugetPackagesMetadataItem Schemas
+
+1 schemas in this group.
+
+| Schema | Type | Description |
+|--------|------|-------------|
+| [APIEntitiesNugetPackagesMetadataItem](APIEntitiesNugetPackagesMetadataItem.md) | object |  |

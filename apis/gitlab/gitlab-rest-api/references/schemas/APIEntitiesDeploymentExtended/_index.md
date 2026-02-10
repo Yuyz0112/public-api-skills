@@ -1,0 +1,7 @@
+# APIEntitiesDeploymentExtended Schemas
+
+1 schemas in this group.
+
+| Schema | Type | Description |
+|--------|------|-------------|
+| [APIEntitiesDeploymentExtended](APIEntitiesDeploymentExtended.md) | object |  |

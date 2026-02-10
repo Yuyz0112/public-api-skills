@@ -1,0 +1,7 @@
+# APIEntitiesNugetDependencyGroup Schemas
+
+1 schemas in this group.
+
+| Schema | Type | Description |
+|--------|------|-------------|
+| [APIEntitiesNugetDependencyGroup](APIEntitiesNugetDependencyGroup.md) | object |  |

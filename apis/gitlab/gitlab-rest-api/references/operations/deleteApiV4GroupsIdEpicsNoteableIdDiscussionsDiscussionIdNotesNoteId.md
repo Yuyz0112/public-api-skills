@@ -1,0 +1,21 @@
+# DELETE /api/v4/groups/{id}/epics/{noteable_id}/discussions/{discussion_id}/notes/{note_id}
+
+**Resource:** [Discussions](../resources/Discussions.md)
+**Delete a comment in a epic discussion**
+**Operation ID:** `deleteApiV4GroupsIdEpicsNoteableIdDiscussionsDiscussionIdNotesNoteId`
+
+## Parameters
+
+| Name | In | Type | Required | Description |
+|------|------|------|----------|-------------|
+| `id` | path | string | Yes | The ID of a group |
+| `noteable_id` | path | integer | Yes | The ID of the epic |
+| `discussion_id` | path | string | Yes | The ID of a discussion |
+| `note_id` | path | integer | Yes | The ID of a note |
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 204 | No Content |
+

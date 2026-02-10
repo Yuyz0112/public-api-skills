@@ -7,6 +7,7 @@
 		"generate:cloudflare": "bunx openapi-to-skills ./apis/cloudflare/openapi.json -o ./apis/cloudflare -f",
 		"generate:discord": "bunx openapi-to-skills ./apis/discord/openapi.json -o ./apis/discord -f",
 		"generate:figma": "bunx openapi-to-skills ./apis/figma/openapi.yaml -o ./apis/figma -f",
+		"generate:gitlab": "bunx openapi-to-skills ./apis/gitlab/openapi.yaml -o ./apis/gitlab -f",
 		"generate:github": "bunx openapi-to-skills ./apis/github/openapi.json -o ./apis/github -f",
 		"generate:jira-cloud": "bunx openapi-to-skills ./apis/jira-cloud/openapi.json -o ./apis/jira-cloud -f",
 		"generate:jira-server": "bunx openapi-to-skills ./apis/jira-server/openapi.json -o ./apis/jira-server -f",

@@ -1,0 +1,25 @@
+# GET /api/v4/projects/{id}/repository/tags/{tag_name}
+
+**Resource:** [Tags](../resources/Tags.md)
+**Get a single repository tag**
+**Operation ID:** `getApiV4ProjectsIdRepositoryTagsTagName`
+
+## Parameters
+
+| Name | In | Type | Required | Description |
+|------|------|------|----------|-------------|
+| `id` | path | any | Yes | The ID or URL-encoded path of the project |
+| `tag_name` | path | string | Yes | The name of the tag |
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 200 | OK |
+| 403 | Unauthenticated |
+| 404 | Not found |
+
+**Success Response Schema:**
+
+[APIEntitiesTag](../schemas/APIEntitiesTag/APIEntitiesTag.md)
+

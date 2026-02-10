@@ -1,0 +1,26 @@
+# POST /api/v4/projects/{id}/snippets/{snippet_id}/notes/{note_id}/award_emoji
+
+**Resource:** [Award emoji](../resources/Award-emoji.md)
+**Add a new emoji reaction**
+**Operation ID:** `postApiV4ProjectsIdSnippetsSnippetIdNotesNoteIdAwardEmoji`
+
+Add an emoji reaction on the specified awardable. This feature was introduced in 8.9
+
+## Request Body
+
+**Required:** Yes
+
+**Content Types:** `application/json`
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 201 | Created |
+| 400 | Bad Request |
+| 404 | Not Found |
+
+**Success Response Schema:**
+
+[APIEntitiesAwardEmoji](../schemas/APIEntitiesAwardEmoji/APIEntitiesAwardEmoji.md)
+

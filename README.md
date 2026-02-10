@@ -22,6 +22,7 @@ Agent Skills solves this by splitting documentation into on-demand files. Agents
 | [Cloudflare](./apis/cloudflare/) | 2,531 | 5,231 | `apis/cloudflare/` |
 | [Discord](./apis/discord/) | 227 | 490 | `apis/discord/` |
 | [Figma](./apis/figma/) | 46 | 223 | `apis/figma/` |
+| [GitLab](./apis/gitlab/) | 1,837 | 454 | `apis/gitlab/` |
 | [GitHub](./apis/github/) | 1,078 | 904 | `apis/github/` |
 | [Jira Cloud](./apis/jira-cloud/) | 616 | 967 | `apis/jira-cloud/` |
 | [PagerDuty](./apis/pagerduty/) | 390 | 244 | `apis/pagerduty/` |

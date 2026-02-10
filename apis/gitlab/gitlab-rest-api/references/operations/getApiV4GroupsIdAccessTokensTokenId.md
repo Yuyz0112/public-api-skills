@@ -1,0 +1,25 @@
+# GET /api/v4/groups/{id}/access_tokens/{token_id}
+
+**Resource:** [Group access tokens](../resources/Group-access-tokens.md)
+**Get an access token for the specified resource by ID**
+**Operation ID:** `getApiV4GroupsIdAccessTokensTokenId`
+
+This feature was introduced in GitLab 14.10.
+
+## Parameters
+
+| Name | In | Type | Required | Description |
+|------|------|------|----------|-------------|
+| `id` | path | any | Yes | ID or URL-encoded path of the group |
+| `token_id` | path | string | Yes | The ID of the token |
+
+## Responses
+
+| Status | Description |
+|--------|-------------|
+| 200 | OK |
+
+**Success Response Schema:**
+
+[APIEntitiesResourceAccessToken](../schemas/APIEntitiesResourceAccessToken/APIEntitiesResourceAccessToken.md)
+
