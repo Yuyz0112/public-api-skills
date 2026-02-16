@@ -1,0 +1,1341 @@
+openapi: 3.0.3
+info:
+  title: TestRail API
+  version: 0.1.0
+  description: |
+    Community-maintained OpenAPI 3.0 specification for TestRail API v2.
+    This spec is designed for automation and conversion to Agent Skills.
+
+    Base endpoint style follows:
+    `index.php?/api/v2/{method}`.
+
+    Notes:
+    - TestRail supports custom fields for many entities (`custom_*`), modeled here with `additionalProperties: true`.
+    - This is not an official TestRail-published OpenAPI document.
+    - Source policy: endpoints/parameters are taken from official TestRail API docs.
+externalDocs:
+  description: Official TestRail API documentation
+  url: https://support.testrail.com/hc/en-us/categories/7076735771924-API
+servers:
+  - url: https://{instance}
+    description: TestRail instance
+    variables:
+      instance:
+        default: your-company.testrail.io
+tags:
+  - name: read
+    description: Read-only operations (typically GET)
+  - name: write
+    description: Write operations (typically POST)
+  - name: projects
+  - name: suites
+  - name: sections
+  - name: cases
+  - name: runs
+  - name: plans
+  - name: tests
+  - name: results
+  - name: statuses
+  - name: users
+  - name: milestones
+paths:
+  /index.php?/api/v2/get_projects:
+    get:
+      operationId: getProjects
+      tags: [projects, read]
+      summary: Get projects
+      parameters:
+        - $ref: "#/components/parameters/IsCompleted"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+      responses:
+        "200":
+          description: Project list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaginatedProjects"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/get_project/{project_id}:
+    get:
+      operationId: getProject
+      tags: [projects, read]
+      summary: Get project
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+      responses:
+        "200":
+          description: Project
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+
+  /index.php?/api/v2/get_suites/{project_id}:
+    get:
+      operationId: getSuites
+      tags: [suites, read]
+      summary: Get suites
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+      responses:
+        "200":
+          description: Suite list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaginatedSuites"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/get_suite/{suite_id}:
+    get:
+      operationId: getSuite
+      tags: [suites, read]
+      summary: Get suite
+      parameters:
+        - $ref: "#/components/parameters/SuiteId"
+      responses:
+        "200":
+          description: Suite
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Suite"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+
+  /index.php?/api/v2/get_sections/{project_id}:
+    get:
+      operationId: getSections
+      tags: [sections, read]
+      summary: Get sections
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/SuiteIdQuery"
+      responses:
+        "200":
+          description: Section list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaginatedSections"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/get_section/{section_id}:
+    get:
+      operationId: getSection
+      tags: [sections, read]
+      summary: Get section
+      parameters:
+        - $ref: "#/components/parameters/SectionId"
+      responses:
+        "200":
+          description: Section
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Section"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+
+  /index.php?/api/v2/get_cases/{project_id}:
+    get:
+      operationId: getCases
+      tags: [cases, read]
+      summary: Get cases
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/SuiteIdQuery"
+        - $ref: "#/components/parameters/SectionIdQuery"
+        - $ref: "#/components/parameters/CreatedAfter"
+        - $ref: "#/components/parameters/CreatedBefore"
+        - $ref: "#/components/parameters/CreatedBy"
+        - $ref: "#/components/parameters/UpdatedAfter"
+        - $ref: "#/components/parameters/UpdatedBefore"
+        - $ref: "#/components/parameters/UpdatedBy"
+        - $ref: "#/components/parameters/MilestoneIdList"
+        - $ref: "#/components/parameters/PriorityIdList"
+        - $ref: "#/components/parameters/TypeIdList"
+        - $ref: "#/components/parameters/TemplateIdList"
+        - $ref: "#/components/parameters/Filter"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+      responses:
+        "200":
+          description: Case list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaginatedCases"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/get_case/{case_id}:
+    get:
+      operationId: getCase
+      tags: [cases, read]
+      summary: Get case
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      responses:
+        "200":
+          description: Case
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Case"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+
+  /index.php?/api/v2/get_runs/{project_id}:
+    get:
+      operationId: getRuns
+      tags: [runs, read]
+      summary: Get runs
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/SuiteIdQuery"
+        - $ref: "#/components/parameters/IsCompleted"
+        - $ref: "#/components/parameters/CreatedBy"
+        - $ref: "#/components/parameters/MilestoneIdList"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+      responses:
+        "200":
+          description: Run list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaginatedRuns"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/get_run/{run_id}:
+    get:
+      operationId: getRun
+      tags: [runs, read]
+      summary: Get run
+      parameters:
+        - $ref: "#/components/parameters/RunId"
+      responses:
+        "200":
+          description: Run
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Run"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/add_run/{project_id}:
+    post:
+      operationId: addRun
+      tags: [runs, write]
+      summary: Add run
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddRunRequest"
+      responses:
+        "200":
+          description: Created run
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Run"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/close_run/{run_id}:
+    post:
+      operationId: closeRun
+      tags: [runs, write]
+      summary: Close run
+      parameters:
+        - $ref: "#/components/parameters/RunId"
+      responses:
+        "200":
+          description: Closed run
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Run"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/delete_run/{run_id}:
+    post:
+      operationId: deleteRun
+      tags: [runs, write]
+      summary: Delete run
+      parameters:
+        - $ref: "#/components/parameters/RunId"
+      responses:
+        "200":
+          description: Run deleted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Run"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+
+  /index.php?/api/v2/get_plans/{project_id}:
+    get:
+      operationId: getPlans
+      tags: [plans, read]
+      summary: Get plans
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/CreatedBy"
+        - $ref: "#/components/parameters/MilestoneIdList"
+        - $ref: "#/components/parameters/IsCompleted"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+      responses:
+        "200":
+          description: Plan list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaginatedPlans"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/get_plan/{plan_id}:
+    get:
+      operationId: getPlan
+      tags: [plans, read]
+      summary: Get plan
+      parameters:
+        - $ref: "#/components/parameters/PlanId"
+      responses:
+        "200":
+          description: Plan
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Plan"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/add_plan/{project_id}:
+    post:
+      operationId: addPlan
+      tags: [plans, write]
+      summary: Add plan
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddPlanRequest"
+      responses:
+        "200":
+          description: Created plan
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Plan"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/close_plan/{plan_id}:
+    post:
+      operationId: closePlan
+      tags: [plans, write]
+      summary: Close plan
+      parameters:
+        - $ref: "#/components/parameters/PlanId"
+      responses:
+        "200":
+          description: Closed plan
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Plan"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+
+  /index.php?/api/v2/get_tests/{run_id}:
+    get:
+      operationId: getTests
+      tags: [tests, read]
+      summary: Get tests in run
+      parameters:
+        - $ref: "#/components/parameters/RunId"
+        - $ref: "#/components/parameters/StatusIdList"
+        - $ref: "#/components/parameters/LabelIdList"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+      responses:
+        "200":
+          description: Test list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaginatedTests"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/get_test/{test_id}:
+    get:
+      operationId: getTest
+      tags: [tests, read]
+      summary: Get test
+      parameters:
+        - $ref: "#/components/parameters/TestId"
+      responses:
+        "200":
+          description: Test
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Test"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+
+  /index.php?/api/v2/get_results/{test_id}:
+    get:
+      operationId: getResults
+      tags: [results, read]
+      summary: Get results for test
+      parameters:
+        - $ref: "#/components/parameters/TestId"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+      responses:
+        "200":
+          description: Result list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaginatedResults"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/get_results_for_case/{run_id}/{case_id}:
+    get:
+      operationId: getResultsForCase
+      tags: [results, read]
+      summary: Get results for run/case
+      parameters:
+        - $ref: "#/components/parameters/RunId"
+        - $ref: "#/components/parameters/CaseId"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+      responses:
+        "200":
+          description: Result list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaginatedResults"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/add_result/{test_id}:
+    post:
+      operationId: addResult
+      tags: [results, write]
+      summary: Add result for test
+      parameters:
+        - $ref: "#/components/parameters/TestId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddResultRequest"
+      responses:
+        "200":
+          description: Added result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Result"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/add_result_for_case/{run_id}/{case_id}:
+    post:
+      operationId: addResultForCase
+      tags: [results, write]
+      summary: Add result for run/case
+      parameters:
+        - $ref: "#/components/parameters/RunId"
+        - $ref: "#/components/parameters/CaseId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddResultRequest"
+      responses:
+        "200":
+          description: Added result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Result"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/add_results/{run_id}:
+    post:
+      operationId: addResults
+      tags: [results, write]
+      summary: Bulk add results by test_id
+      parameters:
+        - $ref: "#/components/parameters/RunId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddResultsRequest"
+      responses:
+        "200":
+          description: Added results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BulkResultsResponse"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/add_results_for_cases/{run_id}:
+    post:
+      operationId: addResultsForCases
+      tags: [results, write]
+      summary: Bulk add results by case_id
+      parameters:
+        - $ref: "#/components/parameters/RunId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddResultsForCasesRequest"
+      responses:
+        "200":
+          description: Added results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BulkResultsResponse"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+
+  /index.php?/api/v2/get_statuses:
+    get:
+      operationId: getStatuses
+      tags: [statuses, read]
+      summary: Get statuses
+      responses:
+        "200":
+          description: Status list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Status"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+
+  /index.php?/api/v2/get_users:
+    get:
+      operationId: getUsers
+      tags: [users, read]
+      summary: Get users
+      responses:
+        "200":
+          description: User list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/get_users/{project_id}:
+    get:
+      operationId: getUsersByProject
+      tags: [users, read]
+      summary: Get users for project
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+      responses:
+        "200":
+          description: User list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/get_user/{user_id}:
+    get:
+      operationId: getUser
+      tags: [users, read]
+      summary: Get user
+      parameters:
+        - $ref: "#/components/parameters/UserId"
+      responses:
+        "200":
+          description: User
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+
+  /index.php?/api/v2/get_milestone/{milestone_id}:
+    get:
+      operationId: getMilestone
+      tags: [milestones, read]
+      summary: Get milestone
+      parameters:
+        - $ref: "#/components/parameters/MilestoneId"
+      responses:
+        "200":
+          description: Milestone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Milestone"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/get_milestones/{project_id}:
+    get:
+      operationId: getMilestones
+      tags: [milestones, read]
+      summary: Get milestones
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/IsCompleted"
+        - $ref: "#/components/parameters/IsStarted"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+      responses:
+        "200":
+          description: Milestone list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaginatedMilestones"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: |
+        TestRail supports HTTP Basic auth. Recommended credential style is:
+        `email_or_username:api_key`.
+
+  parameters:
+    ProjectId:
+      name: project_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    SuiteId:
+      name: suite_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    SuiteIdQuery:
+      name: suite_id
+      in: query
+      required: false
+      schema:
+        type: integer
+    SectionId:
+      name: section_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    SectionIdQuery:
+      name: section_id
+      in: query
+      required: false
+      schema:
+        type: integer
+    CaseId:
+      name: case_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    RunId:
+      name: run_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    PlanId:
+      name: plan_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    MilestoneId:
+      name: milestone_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    TestId:
+      name: test_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    UserId:
+      name: user_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    IsCompleted:
+      name: is_completed
+      in: query
+      required: false
+      schema:
+        type: integer
+        enum: [0, 1]
+      description: 1 for completed, 0 for active.
+    IsStarted:
+      name: is_started
+      in: query
+      required: false
+      schema:
+        type: integer
+        enum: [0, 1]
+      description: 1 for started, 0 for upcoming.
+    Limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 250
+    Offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+    CreatedAfter:
+      name: created_after
+      in: query
+      required: false
+      schema:
+        type: integer
+      description: UNIX timestamp.
+    CreatedBefore:
+      name: created_before
+      in: query
+      required: false
+      schema:
+        type: integer
+      description: UNIX timestamp.
+    UpdatedAfter:
+      name: updated_after
+      in: query
+      required: false
+      schema:
+        type: integer
+      description: UNIX timestamp.
+    UpdatedBefore:
+      name: updated_before
+      in: query
+      required: false
+      schema:
+        type: integer
+      description: UNIX timestamp.
+    CreatedBy:
+      name: created_by
+      in: query
+      required: false
+      schema:
+        oneOf:
+          - type: integer
+          - type: string
+      description: User ID or comma-separated user IDs.
+    UpdatedBy:
+      name: updated_by
+      in: query
+      required: false
+      schema:
+        oneOf:
+          - type: integer
+          - type: string
+      description: User ID or comma-separated user IDs.
+    MilestoneIdList:
+      name: milestone_id
+      in: query
+      required: false
+      schema:
+        oneOf:
+          - type: integer
+          - type: string
+      description: Milestone ID or comma-separated milestone IDs.
+    PriorityIdList:
+      name: priority_id
+      in: query
+      required: false
+      schema:
+        oneOf:
+          - type: integer
+          - type: string
+      description: Priority ID or comma-separated priority IDs.
+    TypeIdList:
+      name: type_id
+      in: query
+      required: false
+      schema:
+        oneOf:
+          - type: integer
+          - type: string
+      description: Type ID or comma-separated type IDs.
+    TemplateIdList:
+      name: template_id
+      in: query
+      required: false
+      schema:
+        oneOf:
+          - type: integer
+          - type: string
+      description: Template ID or comma-separated template IDs.
+    StatusIdList:
+      name: status_id
+      in: query
+      required: false
+      schema:
+        oneOf:
+          - type: integer
+          - type: string
+      description: Status ID or comma-separated status IDs.
+    LabelIdList:
+      name: label_id
+      in: query
+      required: false
+      schema:
+        oneOf:
+          - type: integer
+          - type: string
+      description: Label ID or comma-separated label IDs.
+    Filter:
+      name: filter
+      in: query
+      required: false
+      schema:
+        type: string
+
+  responses:
+    ApiError:
+      description: API error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiError"
+
+  schemas:
+    ApiError:
+      type: object
+      properties:
+        error:
+          type: string
+      additionalProperties: true
+
+    PaginationLinks:
+      type: object
+      properties:
+        next:
+          type: string
+          nullable: true
+        prev:
+          type: string
+          nullable: true
+      additionalProperties: true
+
+    PaginatedBase:
+      type: object
+      properties:
+        offset:
+          type: integer
+        limit:
+          type: integer
+        size:
+          type: integer
+        _links:
+          $ref: "#/components/schemas/PaginationLinks"
+      additionalProperties: true
+
+    Project:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        announcement: { type: string, nullable: true }
+        show_announcement: { type: boolean }
+        is_completed: { type: boolean }
+        completed_on: { type: integer, nullable: true }
+        suite_mode: { type: integer }
+        url: { type: string }
+      additionalProperties: true
+
+    Suite:
+      type: object
+      properties:
+        id: { type: integer }
+        project_id: { type: integer }
+        name: { type: string }
+        description: { type: string, nullable: true }
+        is_baseline: { type: boolean, nullable: true }
+        is_master: { type: boolean, nullable: true }
+        is_completed: { type: boolean, nullable: true }
+        completed_on: { type: integer, nullable: true }
+        url: { type: string, nullable: true }
+      additionalProperties: true
+
+    Section:
+      type: object
+      properties:
+        id: { type: integer }
+        suite_id: { type: integer }
+        name: { type: string }
+        description: { type: string, nullable: true }
+        parent_id: { type: integer, nullable: true }
+        depth: { type: integer }
+        display_order: { type: integer }
+      additionalProperties: true
+
+    Case:
+      type: object
+      properties:
+        id: { type: integer }
+        title: { type: string }
+        section_id: { type: integer }
+        suite_id: { type: integer, nullable: true }
+        template_id: { type: integer, nullable: true }
+        type_id: { type: integer, nullable: true }
+        priority_id: { type: integer, nullable: true }
+        milestone_id: { type: integer, nullable: true }
+        created_by: { type: integer, nullable: true }
+        created_on: { type: integer, nullable: true }
+        updated_by: { type: integer, nullable: true }
+        updated_on: { type: integer, nullable: true }
+        estimate: { type: string, nullable: true }
+        estimate_forecast: { type: string, nullable: true }
+        refs: { type: string, nullable: true }
+      additionalProperties: true
+
+    Run:
+      type: object
+      properties:
+        id: { type: integer }
+        suite_id: { type: integer, nullable: true }
+        project_id: { type: integer }
+        name: { type: string }
+        description: { type: string, nullable: true }
+        milestone_id: { type: integer, nullable: true }
+        assignedto_id: { type: integer, nullable: true }
+        include_all: { type: boolean }
+        is_completed: { type: boolean }
+        completed_on: { type: integer, nullable: true }
+        created_on: { type: integer, nullable: true }
+        created_by: { type: integer, nullable: true }
+        passed_count: { type: integer, nullable: true }
+        blocked_count: { type: integer, nullable: true }
+        untested_count: { type: integer, nullable: true }
+        retest_count: { type: integer, nullable: true }
+        failed_count: { type: integer, nullable: true }
+      additionalProperties: true
+
+    Plan:
+      type: object
+      properties:
+        id: { type: integer }
+        project_id: { type: integer }
+        name: { type: string }
+        description: { type: string, nullable: true }
+        milestone_id: { type: integer, nullable: true }
+        assignedto_id: { type: integer, nullable: true }
+        is_completed: { type: boolean }
+        completed_on: { type: integer, nullable: true }
+        entries:
+          type: array
+          items:
+            $ref: "#/components/schemas/PlanEntry"
+      additionalProperties: true
+
+    PlanEntry:
+      type: object
+      properties:
+        id: { type: string, nullable: true }
+        suite_id: { type: integer, nullable: true }
+        name: { type: string, nullable: true }
+        description: { type: string, nullable: true }
+        assignedto_id: { type: integer, nullable: true }
+        include_all: { type: boolean, nullable: true }
+        case_ids:
+          type: array
+          items: { type: integer }
+        config_ids:
+          type: array
+          items: { type: integer }
+        runs:
+          type: array
+          items:
+            $ref: "#/components/schemas/Run"
+      additionalProperties: true
+
+    Test:
+      type: object
+      properties:
+        id: { type: integer }
+        case_id: { type: integer }
+        run_id: { type: integer }
+        title: { type: string, nullable: true }
+        status_id: { type: integer }
+        assignedto_id: { type: integer, nullable: true }
+        milestone_id: { type: integer, nullable: true }
+        priority_id: { type: integer, nullable: true }
+        refs: { type: string, nullable: true }
+      additionalProperties: true
+
+    Status:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        label: { type: string }
+        is_system: { type: boolean }
+        is_final: { type: boolean }
+        is_untested: { type: boolean }
+        color_bright: { type: integer, nullable: true }
+        color_medium: { type: integer, nullable: true }
+        color_dark: { type: integer, nullable: true }
+      additionalProperties: true
+
+    User:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        email: { type: string, nullable: true }
+        is_active: { type: boolean, nullable: true }
+      additionalProperties: true
+
+    Milestone:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        description: { type: string, nullable: true }
+        start_on: { type: integer, nullable: true }
+        due_on: { type: integer, nullable: true }
+        started_on: { type: integer, nullable: true }
+        completed_on: { type: integer, nullable: true }
+        is_started: { type: boolean, nullable: true }
+        is_completed: { type: boolean, nullable: true }
+        parent_id: { type: integer, nullable: true }
+      additionalProperties: true
+
+    ResultStep:
+      type: object
+      properties:
+        content: { type: string, nullable: true }
+        expected: { type: string, nullable: true }
+        actual: { type: string, nullable: true }
+        status_id: { type: integer, nullable: true }
+      additionalProperties: true
+
+    Result:
+      type: object
+      properties:
+        id: { type: integer }
+        test_id: { type: integer, nullable: true }
+        assignedto_id: { type: integer, nullable: true }
+        status_id: { type: integer, nullable: true }
+        created_by: { type: integer, nullable: true }
+        created_on: { type: integer, nullable: true }
+        comment: { type: string, nullable: true }
+        version: { type: string, nullable: true }
+        elapsed: { type: string, nullable: true }
+        defects: { type: string, nullable: true }
+        custom_step_results:
+          type: array
+          items:
+            $ref: "#/components/schemas/ResultStep"
+      additionalProperties: true
+
+    AddRunRequest:
+      type: object
+      required: [name]
+      properties:
+        suite_id: { type: integer }
+        name: { type: string }
+        description: { type: string }
+        milestone_id: { type: integer }
+        assignedto_id: { type: integer }
+        include_all:
+          type: boolean
+          default: true
+        case_ids:
+          type: array
+          items: { type: integer }
+        refs: { type: string }
+      additionalProperties: true
+
+    AddPlanEntryRequest:
+      type: object
+      properties:
+        suite_id: { type: integer }
+        name: { type: string }
+        description: { type: string }
+        assignedto_id: { type: integer }
+        include_all:
+          type: boolean
+          default: true
+        case_ids:
+          type: array
+          items: { type: integer }
+        config_ids:
+          type: array
+          items: { type: integer }
+        refs: { type: string }
+      additionalProperties: true
+
+    AddPlanRequest:
+      type: object
+      required: [name]
+      properties:
+        name: { type: string }
+        description: { type: string }
+        milestone_id: { type: integer }
+        entries:
+          type: array
+          items:
+            $ref: "#/components/schemas/AddPlanEntryRequest"
+      additionalProperties: true
+
+    AddResultRequest:
+      type: object
+      properties:
+        status_id: { type: integer, description: "Default system statuses: 1 Passed, 2 Blocked, 4 Retest, 5 Failed." }
+        comment: { type: string }
+        version: { type: string }
+        elapsed: { type: string, description: "Examples: 30s, 1m 45s, 2h." }
+        defects: { type: string, description: "Comma-separated references, for example BUG-123,BUG-456." }
+        assignedto_id: { type: integer }
+        custom_step_results:
+          type: array
+          items:
+            $ref: "#/components/schemas/ResultStep"
+      additionalProperties: true
+
+    AddResultsRequestItem:
+      allOf:
+        - $ref: "#/components/schemas/AddResultRequest"
+        - type: object
+          properties:
+            test_id: { type: integer }
+          required: [test_id]
+
+    AddResultsForCasesRequestItem:
+      allOf:
+        - $ref: "#/components/schemas/AddResultRequest"
+        - type: object
+          properties:
+            case_id: { type: integer }
+          required: [case_id]
+
+    AddResultsRequest:
+      type: object
+      required: [results]
+      properties:
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/AddResultsRequestItem"
+
+    AddResultsForCasesRequest:
+      type: object
+      required: [results]
+      properties:
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/AddResultsForCasesRequestItem"
+
+    BulkResultsResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/Result"
+      additionalProperties: true
+
+    PaginatedProjects:
+      allOf:
+        - $ref: "#/components/schemas/PaginatedBase"
+        - type: object
+          properties:
+            projects:
+              type: array
+              items:
+                $ref: "#/components/schemas/Project"
+
+    PaginatedCases:
+      allOf:
+        - $ref: "#/components/schemas/PaginatedBase"
+        - type: object
+          properties:
+            cases:
+              type: array
+              items:
+                $ref: "#/components/schemas/Case"
+
+    PaginatedSuites:
+      allOf:
+        - $ref: "#/components/schemas/PaginatedBase"
+        - type: object
+          properties:
+            suites:
+              type: array
+              items:
+                $ref: "#/components/schemas/Suite"
+
+    PaginatedSections:
+      allOf:
+        - $ref: "#/components/schemas/PaginatedBase"
+        - type: object
+          properties:
+            sections:
+              type: array
+              items:
+                $ref: "#/components/schemas/Section"
+
+    PaginatedRuns:
+      allOf:
+        - $ref: "#/components/schemas/PaginatedBase"
+        - type: object
+          properties:
+            runs:
+              type: array
+              items:
+                $ref: "#/components/schemas/Run"
+
+    PaginatedPlans:
+      allOf:
+        - $ref: "#/components/schemas/PaginatedBase"
+        - type: object
+          properties:
+            plans:
+              type: array
+              items:
+                $ref: "#/components/schemas/Plan"
+
+    PaginatedTests:
+      allOf:
+        - $ref: "#/components/schemas/PaginatedBase"
+        - type: object
+          properties:
+            tests:
+              type: array
+              items:
+                $ref: "#/components/schemas/Test"
+
+    PaginatedResults:
+      allOf:
+        - $ref: "#/components/schemas/PaginatedBase"
+        - type: object
+          properties:
+            results:
+              type: array
+              items:
+                $ref: "#/components/schemas/Result"
+
+    PaginatedMilestones:
+      allOf:
+        - $ref: "#/components/schemas/PaginatedBase"
+        - type: object
+          properties:
+            milestones:
+              type: array
+              items:
+                $ref: "#/components/schemas/Milestone"
