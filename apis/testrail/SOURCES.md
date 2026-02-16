@@ -12,6 +12,7 @@ This spec is maintained only from official TestRail API documentation.
 - Plans: https://support.testrail.com/hc/en-us/articles/7077792390932-Plans
 - Tests: https://support.testrail.com/hc/en-us/articles/7077990441108-Tests
 - Results: https://support.testrail.com/hc/en-us/articles/7077819312404-Results
+- Attachments: https://support.testrail.com/hc/en-us/articles/7077196481428-Attachments
 - Milestones: https://support.testrail.com/hc/en-us/articles/7077860530324-Milestones
 - Users: https://support.testrail.com/hc/en-us/articles/7077871554452-Users
 - Statuses: https://support.testrail.com/hc/en-us/articles/7077935129364-Get-statuses

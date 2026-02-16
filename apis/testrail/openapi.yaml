@@ -38,6 +38,7 @@ tags:
   - name: statuses
   - name: users
   - name: milestones
+  - name: attachments
 paths:
   /index.php?/api/v2/get_projects:
     get:
@@ -572,6 +573,208 @@ paths:
       security:
         - basicAuth: []
 
+  /index.php?/api/v2/get_attachment/{attachment_id}:
+    get:
+      operationId: getAttachment
+      tags: [attachments, read]
+      summary: Get attachment
+      parameters:
+        - $ref: "#/components/parameters/AttachmentId"
+      responses:
+        "200":
+          description: Attachment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Attachment"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/get_attachments_for_case/{case_id}:
+    get:
+      operationId: getAttachmentsForCase
+      tags: [attachments, read]
+      summary: Get attachments for case
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      responses:
+        "200":
+          description: Attachment list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Attachment"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/add_attachment_to_case/{case_id}:
+    post:
+      operationId: addAttachmentToCase
+      tags: [attachments, write]
+      summary: Add attachment to case
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/AddAttachmentRequest"
+      responses:
+        "200":
+          description: Created attachment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Attachment"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/add_attachment_to_plan/{plan_id}:
+    post:
+      operationId: addAttachmentToPlan
+      tags: [attachments, write]
+      summary: Add attachment to plan
+      parameters:
+        - $ref: "#/components/parameters/PlanId"
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/AddAttachmentRequest"
+      responses:
+        "200":
+          description: Created attachment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Attachment"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/add_attachment_to_plan_entry/{plan_entry_id}:
+    post:
+      operationId: addAttachmentToPlanEntry
+      tags: [attachments, write]
+      summary: Add attachment to plan entry
+      parameters:
+        - $ref: "#/components/parameters/PlanEntryId"
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/AddAttachmentRequest"
+      responses:
+        "200":
+          description: Created attachment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Attachment"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/add_attachment_to_result/{result_id}:
+    post:
+      operationId: addAttachmentToResult
+      tags: [attachments, write]
+      summary: Add attachment to result
+      parameters:
+        - $ref: "#/components/parameters/ResultId"
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/AddAttachmentRequest"
+      responses:
+        "200":
+          description: Created attachment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Attachment"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/add_attachment_to_run/{run_id}:
+    post:
+      operationId: addAttachmentToRun
+      tags: [attachments, write]
+      summary: Add attachment to run
+      parameters:
+        - $ref: "#/components/parameters/RunId"
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/AddAttachmentRequest"
+      responses:
+        "200":
+          description: Created attachment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Attachment"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/add_attachment_to_test/{test_id}:
+    post:
+      operationId: addAttachmentToTest
+      tags: [attachments, write]
+      summary: Add attachment to test
+      parameters:
+        - $ref: "#/components/parameters/TestId"
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/AddAttachmentRequest"
+      responses:
+        "200":
+          description: Created attachment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Attachment"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/delete_attachment/{attachment_id}:
+    post:
+      operationId: deleteAttachment
+      tags: [attachments, write]
+      summary: Delete attachment
+      parameters:
+        - $ref: "#/components/parameters/AttachmentId"
+      responses:
+        "200":
+          description: Attachment deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+
   /index.php?/api/v2/get_statuses:
     get:
       operationId: getStatuses
@@ -759,6 +962,28 @@ components:
       required: true
       schema:
         type: integer
+    ResultId:
+      name: result_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    PlanEntryId:
+      name: plan_entry_id
+      in: path
+      required: true
+      schema:
+        oneOf:
+          - type: integer
+          - type: string
+    AttachmentId:
+      name: attachment_id
+      in: path
+      required: true
+      schema:
+        oneOf:
+          - type: integer
+          - type: string
     UserId:
       name: user_id
       in: path
@@ -1141,6 +1366,30 @@ components:
           items:
             $ref: "#/components/schemas/ResultStep"
       additionalProperties: true
+
+    Attachment:
+      type: object
+      properties:
+        id:
+          oneOf:
+            - type: integer
+            - type: string
+        name: { type: string }
+        size: { type: integer }
+        created_on: { type: integer }
+        project_id: { type: integer, nullable: true }
+        case_id: { type: integer, nullable: true }
+        user_id: { type: integer, nullable: true }
+        result_id: { type: integer, nullable: true }
+      additionalProperties: true
+
+    AddAttachmentRequest:
+      type: object
+      required: [attachment]
+      properties:
+        attachment:
+          type: string
+          format: binary
 
     AddRunRequest:
       type: object

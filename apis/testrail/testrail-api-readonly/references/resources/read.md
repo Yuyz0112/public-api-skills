@@ -22,6 +22,8 @@ Read-only operations (typically GET)
 | GET | `/index.php?/api/v2/get_test/{test_id}` | Get test | [View](../operations/getTest.md) |
 | GET | `/index.php?/api/v2/get_results/{test_id}` | Get results for test | [View](../operations/getResults.md) |
 | GET | `/index.php?/api/v2/get_results_for_case/{run_id}/{case_id}` | Get results for run/case | [View](../operations/getResultsForCase.md) |
+| GET | `/index.php?/api/v2/get_attachment/{attachment_id}` | Get attachment | [View](../operations/getAttachment.md) |
+| GET | `/index.php?/api/v2/get_attachments_for_case/{case_id}` | Get attachments for case | [View](../operations/getAttachmentsForCase.md) |
 | GET | `/index.php?/api/v2/get_statuses` | Get statuses | [View](../operations/getStatuses.md) |
 | GET | `/index.php?/api/v2/get_users` | Get users | [View](../operations/getUsers.md) |
 | GET | `/index.php?/api/v2/get_users/{project_id}` | Get users for project | [View](../operations/getUsersByProject.md) |

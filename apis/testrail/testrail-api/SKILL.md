@@ -17,9 +17,9 @@ This API documentation is split into multiple files for on-demand loading.
 **Directory structure:**
 ```
 references/
-├── resources/      # 11 resource index files
-├── operations/     # 31 operation detail files
-└── schemas/        # 16 schema groups, 34 schema files
+├── resources/      # 12 resource index files
+├── operations/     # 40 operation detail files
+└── schemas/        # 17 schema groups, 36 schema files
 ```
 
 **Navigation flow:**
@@ -38,6 +38,7 @@ Supported methods: **basicAuth**. See `references/authentication.md` for details
 
 ## Resources
 
+- **attachments** → `references/resources/attachments.md` (9 ops)
 - **results** → `references/resources/results.md` (6 ops)
 - **runs** → `references/resources/runs.md` (5 ops)
 - **plans** → `references/resources/plans.md` (4 ops)

@@ -15,7 +15,7 @@
 		"generate:shopify": "bunx openapi-to-skills ./apis/shopify/openapi.json -o ./apis/shopify -f",
 		"generate:slack": "bunx openapi-to-skills ./apis/slack/openapi.json -o ./apis/slack -f",
 		"generate:stripe": "bunx openapi-to-skills ./apis/stripe/openapi.json -o ./apis/stripe -f",
-		"generate:testrail": "bunx openapi-to-skills ./apis/testrail/openapi.yaml -o ./apis/testrail --includeTags projects,suites,sections,cases,runs,plans,tests,results,statuses,users,milestones -f",
+		"generate:testrail": "bunx openapi-to-skills ./apis/testrail/openapi.yaml -o ./apis/testrail --includeTags projects,suites,sections,cases,runs,plans,tests,results,statuses,users,milestones,attachments -f",
 		"generate:testrail:readonly": "bunx openapi-to-skills ./apis/testrail/openapi.yaml -o ./apis/testrail --name testrail-api-readonly --includeTags read -f",
 		"generate:twilio": "bunx openapi-to-skills ./apis/twilio/openapi.json -o ./apis/twilio -f",
 		"generate:twitter": "bunx openapi-to-skills ./apis/twitter/openapi.json -o ./apis/twitter -f"

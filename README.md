@@ -29,7 +29,7 @@ Agent Skills solves this by splitting documentation into on-demand files. Agents
 | [Shopify](./apis/shopify/) | 4,567 | - | `apis/shopify/` |
 | [Slack](./apis/slack/) | 253 | 48 | `apis/slack/` |
 | [Stripe](./apis/stripe/) | 588 | 1,315 | `apis/stripe/` |
-| [TestRail](./apis/testrail/) | 29 | 32 | `apis/testrail/` |
+| [TestRail](./apis/testrail/) | 40 | 36 | `apis/testrail/` |
 | [Twilio](./apis/twilio/) | 197 | 148 | `apis/twilio/` |
 | [Twitter/X](./apis/twitter/) | 192 | 393 | `apis/twitter/` |
 

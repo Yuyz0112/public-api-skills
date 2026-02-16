@@ -18,8 +18,8 @@ This API documentation is split into multiple files for on-demand loading.
 ```
 references/
 ├── resources/      # 1 resource index files
-├── operations/     # 22 operation detail files
-└── schemas/        # 16 schema groups, 34 schema files
+├── operations/     # 24 operation detail files
+└── schemas/        # 17 schema groups, 36 schema files
 ```
 
 **Navigation flow:**
@@ -38,4 +38,4 @@ Supported methods: **basicAuth**. See `references/authentication.md` for details
 
 ## Resources
 
-- **read** → `references/resources/read.md` (22 ops) - Read-only operations (typically GET)
+- **read** → `references/resources/read.md` (24 ops) - Read-only operations (typically GET)
