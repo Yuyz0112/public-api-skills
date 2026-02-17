@@ -205,6 +205,73 @@ paths:
           $ref: "#/components/responses/ApiError"
       security:
         - basicAuth: []
+  /index.php?/api/v2/add_case/{section_id}:
+    post:
+      operationId: addCase
+      tags: [cases, write]
+      summary: Add case
+      parameters:
+        - $ref: "#/components/parameters/SectionId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddCaseRequest"
+      responses:
+        "200":
+          description: Created case
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Case"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/update_case/{case_id}:
+    post:
+      operationId: updateCase
+      tags: [cases, write]
+      summary: Update case
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateCaseRequest"
+      responses:
+        "200":
+          description: Updated case
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Case"
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
+  /index.php?/api/v2/delete_case/{case_id}:
+    post:
+      operationId: deleteCase
+      tags: [cases, write]
+      summary: Delete case
+      parameters:
+        - $ref: "#/components/parameters/CaseId"
+      responses:
+        "200":
+          description: Case deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        default:
+          $ref: "#/components/responses/ApiError"
+      security:
+        - basicAuth: []
 
   /index.php?/api/v2/get_runs/{project_id}:
     get:
@@ -1390,6 +1457,31 @@ components:
         attachment:
           type: string
           format: binary
+
+    AddCaseRequest:
+      type: object
+      required: [title]
+      properties:
+        title: { type: string }
+        template_id: { type: integer }
+        type_id: { type: integer }
+        priority_id: { type: integer }
+        milestone_id: { type: integer }
+        refs: { type: string }
+        estimate: { type: string }
+      additionalProperties: true
+
+    UpdateCaseRequest:
+      type: object
+      properties:
+        title: { type: string }
+        template_id: { type: integer }
+        type_id: { type: integer }
+        priority_id: { type: integer }
+        milestone_id: { type: integer }
+        refs: { type: string }
+        estimate: { type: string }
+      additionalProperties: true
 
     AddRunRequest:
       type: object

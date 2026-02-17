@@ -18,8 +18,8 @@ This API documentation is split into multiple files for on-demand loading.
 ```
 references/
 ├── resources/      # 12 resource index files
-├── operations/     # 40 operation detail files
-└── schemas/        # 17 schema groups, 36 schema files
+├── operations/     # 43 operation detail files
+└── schemas/        # 18 schema groups, 38 schema files
 ```
 
 **Navigation flow:**
@@ -40,13 +40,13 @@ Supported methods: **basicAuth**. See `references/authentication.md` for details
 
 - **attachments** → `references/resources/attachments.md` (9 ops)
 - **results** → `references/resources/results.md` (6 ops)
+- **cases** → `references/resources/cases.md` (5 ops)
 - **runs** → `references/resources/runs.md` (5 ops)
 - **plans** → `references/resources/plans.md` (4 ops)
 - **users** → `references/resources/users.md` (3 ops)
 - **projects** → `references/resources/projects.md` (2 ops)
 - **suites** → `references/resources/suites.md` (2 ops)
 - **sections** → `references/resources/sections.md` (2 ops)
-- **cases** → `references/resources/cases.md` (2 ops)
 - **tests** → `references/resources/tests.md` (2 ops)
 - **milestones** → `references/resources/milestones.md` (2 ops)
 - **statuses** → `references/resources/statuses.md` (1 ops)

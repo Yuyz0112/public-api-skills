@@ -1,10 +1,11 @@
 # Add Schemas
 
-9 schemas in this group.
+10 schemas in this group.
 
 | Schema | Type | Description |
 |--------|------|-------------|
 | [AddAttachmentRequest](AddAttachmentRequest.md) | object |  |
+| [AddCaseRequest](AddCaseRequest.md) | object |  |
 | [AddRunRequest](AddRunRequest.md) | object |  |
 | [AddPlanEntryRequest](AddPlanEntryRequest.md) | object |  |
 | [AddPlanRequest](AddPlanRequest.md) | object |  |
